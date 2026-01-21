@@ -3,8 +3,6 @@ import Country from "../Country/Country";
 import "./Countries.css";
 const Countries = ({ countriesPromise }) => {
   const countries = use(countriesPromise);
- 
-  
   return (
     <div>
       <h1 className="border">Rest Countries : {countries.length}</h1>

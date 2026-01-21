@@ -1,9 +1,10 @@
+import { useState } from "react";
 import "./country.css";
 const Country = ({ country }) => {
-  // console.log(country.independent);
+const [visited, setVisited] = useState(false);  
 
   const handelVisited = () => {
-    console.log("visited clicked");
+    setVisited(true);
   };
 
   return (
@@ -12,7 +13,9 @@ const Country = ({ country }) => {
       <img src={country.flags.png} alt="" />
       <h3>Independent: {country.independent ? "Free" : "Not Free"}</h3>
       <h4>Population:{country.population}</h4>
-      <button onClick={handelVisited}>Not Visited</button>
+      <button onClick={handelVisited}>{
+        visited ? 'visited' : 'Not visited'
+        }</button>
     </div>
   );
 };
